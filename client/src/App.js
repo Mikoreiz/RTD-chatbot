@@ -7,14 +7,13 @@ import axios from "axios"
 
 const id = Math.random()
 
-
 class App extends Component {
   componentDidMount() {
     addResponseMessage("Welcome! I'm here to assist you!")
   }
 
   handleNewUserMessage(message) {
-    axios.post("https://chatbot-backend-4387.twil.io/chat", {
+    axios.post("https://chatbot-backend-4386.twil.io/chat", {
       message,
       id
     }).then((response) => {
