@@ -10,10 +10,11 @@ const id = Math.random()
 class App extends Component {
   componentDidMount() {
     addResponseMessage("Welcome! I'm here to assist you!")
+    addResponseMessage("Reply: \n\nStop (stop #) - for stop times \n\n Route (rte #) - for route info \n\n Or ask a question/make a request")
   }
 
   handleNewUserMessage(message) {
-    axios.post("https://chatbot-backend-4386.twil.io/chat", {
+    axios.post("https://chatbot-backend-4387.twil.io/chat", {
       message,
       id
     }).then((response) => {
@@ -26,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Widget handleNewUserMessage={this.handleNewUserMessage} />
+        <Widget title="San Joaquin RTD" subtitle="Chat" showTimeStamp={false} handleNewUserMessage={this.handleNewUserMessage} />
       </div>
     );
   }
